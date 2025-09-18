@@ -1,36 +1,37 @@
-# Antrian Online (PHP + MySQL)
+# Antrian QR
 
-Project sederhana sistem antrian online menggunakan PHP (native) dan MySQL.  
-Cocok untuk dijalankan di XAMPP (Windows) atau LAMP stack.
+Sistem Antrian Online dengan fitur QR dan login admin.
 
 ## Fitur
-- Pengguna ambil nomor antrian
-- Admin memanggil nomor berikutnya / menyelesaikan nomor
-- Layar display untuk monitor/TV (auto refresh)
-- API sederhana untuk integrasi
+- Ambil nomor antrian secara online
+- Layar display antrian
+- Login admin untuk memanggil & melihat daftar antrian
+- Reset antrian setiap hari
 
-## Instalasi (XAMPP)
-1. Copy folder `antrian_qr` ke `C:\xampp\htdocs\antrian_qr` (atau folder htdocs kamu).
-2. Import `sql/create_db.sql` lewat phpMyAdmin atau jalankan di MySQL:
-   - Buka http://localhost/phpmyadmin
-   - Buat dan import `create_db.sql`
-3. Jalankan Apache & MySQL di XAMPP.
-4. Buka:
-   - Halaman pengguna: http://localhost/antrian_qr/index.php
-   - Admin: http://localhost/antrian_qr/admin.php
-   - Display: http://localhost/antrian_qr/display.php
+## Struktur Folder
+- `public/` → Berisi halaman publik seperti ambil nomor & display
+- `admin/` → Panel admin untuk panggil, lihat antrian
+- `auth/` → Login & logout
+- `config/` → Koneksi database & session
+- `sql/` → Skrip SQL untuk membuat database & tabel
 
-## Catatan
-- Untuk production: tambahkan otentikasi pada `admin.php`, gunakan prepared statements untuk keamanan, dan jangan gunakan akun root MySQL tanpa password.
-- QR pada halaman dibuat via Google Chart API (hanya contoh).
+## Instalasi
+1. Jalankan **XAMPP** → aktifkan Apache & MySQL  
+2. Copy folder `antrian_qr` ke `htdocs/`  
+3. Import `sql/create_db.sql` melalui phpMyAdmin  
+4. Akses `http://localhost/antrian_qr/public/index.php` untuk ambil nomor  
+5. Login admin di `http://localhost/antrian_qr/auth/login.php` (after kamu buat data user di database)
 
-## Cara push ke GitHub (singkat)
+## Pengaturan Tambahan
+- Pastikan folder `css/`, `js/` dan `images/` sudah di-set permission jika diperlukan  
+- Untuk keamanan: gunakan `password_hash` & `password_verify` di PHP  
+- Bersihkan input user untuk mencegah SQL injection
+
+## Cara Push ke GitHub
 ```bash
-cd path/to/antrian_qr
 git init
+git remote add origin https://github.com/USERNAME/antrian_qr.git
 git add .
-git commit -m "Initial commit - antrian online"
-# Buat repo di GitHub lalu:
-git remote add origin https://github.com/USERNAME/REPO.git
+git commit -m "Menambahkan project antrian QR dengan login admin"
 git branch -M main
 git push -u origin main

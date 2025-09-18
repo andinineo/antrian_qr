@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "db_antrian";
+$db   = "antrian_qr"; // samakan dengan nama database yang kamu import
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 if (!$conn) {

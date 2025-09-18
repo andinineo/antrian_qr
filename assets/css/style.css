@@ -1,0 +1,16 @@
+/* style.css */
+body { font-family: Arial, sans-serif; background:#f4f6f8; color:#222; margin:0; padding:20px;}
+.container {max-width:900px; margin:0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+h1{margin-top:0}
+form input[type="text"]{width:100%; padding:8px; margin:8px 0;}
+button{padding:10px 16px; cursor:pointer;}
+.card{margin-top:16px; padding:12px; background:#f9fafb; border-radius:6px;}
+.no{font-size:48px; font-weight:700; margin:8px 0;}
+.display .big-no{font-size:180px; font-weight:800;}
+.big{font-size:64px;}
+.panel{margin:16px 0; padding:12px; border:1px solid #eee; border-radius:6px; background:#fff;}
+.controls .btn{display:inline-block; padding:10px 12px; margin-right:8px; background:#2b79ff; color:#fff; text-decoration:none; border-radius:6px;}
+.btn.danger{background:#ff4d4f;}
+table{width:100%; border-collapse:collapse;}
+table td, table th{padding:8px; border-bottom:1px solid #eee;}
+.center{text-align:center; padding:40px;}
